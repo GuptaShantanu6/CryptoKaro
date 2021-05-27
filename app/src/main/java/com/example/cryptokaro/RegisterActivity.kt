@@ -2,6 +2,8 @@ package com.example.cryptokaro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import androidx.core.text.bold
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 

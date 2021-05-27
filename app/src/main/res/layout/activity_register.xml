@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="238dp" />
+        app:layout_constraintGuide_begin="268dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left_reg_icon"
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="797dp" />
+        app:layout_constraintGuide_end="770dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_tab_bottom"
@@ -79,8 +79,9 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_right_reg_icon"
         app:layout_constraintBottom_toTopOf="@id/guideline_tab_bottom"
         app:tabIndicatorColor="#FF4B3A"
-        app:tabSelectedTextColor="#000000"/>
-    
+        app:tabSelectedTextColor="#000000"
+        app:tabTextAppearance="@style/register_tab_Text"/>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/register_viewPager"
         android:layout_width="match_parent"
