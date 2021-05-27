@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="#D5D5D5">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_rectangle_register"
+        app:layout_constraintBottom_toTopOf="@id/guideline_tab_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_crypto_karo__1_"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom_reg_icon"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right_reg_icon"
+        app:layout_constraintStart_toStartOf="@id/guideline_left_reg_icon"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top_reg_icon" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom_reg_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="238dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left_reg_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="47dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right_reg_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="368dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_reg_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="797dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_tab_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="459dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_tab_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="518dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/register_tab"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_tab_up"
+        app:layout_constraintStart_toStartOf="@id/guideline_left_reg_icon"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right_reg_icon"
+        app:layout_constraintBottom_toTopOf="@id/guideline_tab_bottom"
+        app:tabIndicatorColor="#FF4B3A"
+        app:tabSelectedTextColor="#000000"/>
+    
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/register_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_tab_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
