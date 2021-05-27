@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF4B3A"
+    tools:context=".SplashScreen">
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/white_circle_splash_screen"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2_circle_view"
+        app:layout_constraintEnd_toEndOf="@id/guideline3_circle_view"
+        app:layout_constraintStart_toStartOf="@id/guideline4_circle_view"
+        app:layout_constraintTop_toTopOf="@id/guideline5_circle_view" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_circle_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="188dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3_circle_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="188dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4_circle_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5_circle_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_crypto_karo__1_"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2_circle_view"
+        app:layout_constraintEnd_toEndOf="@id/guideline3_circle_view"
+        app:layout_constraintStart_toStartOf="@id/guideline4_circle_view"
+        app:layout_constraintTop_toTopOf="@id/guideline5_circle_view"
+        app:layout_constraintVertical_bias="0.763" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_for_splashTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="354dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/guideline2_circle_view"
+        app:layout_constraintBottom_toTopOf="@id/guideline_for_splashTextView"
+        app:layout_constraintStart_toStartOf="@id/guideline4_circle_view"
+        app:layout_constraintEnd_toEndOf="@id/guideline_splashText_end"
+        android:fontFamily="@font/poppins"
+        android:textColor="#ffffff"
+        android:text="Learn to \nEarn"
+        android:textSize="65sp"
+        android:lineSpacingExtra="-35dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_cont_btn_top_splash"
+        app:layout_constraintTop_toBottomOf="@id/guideline_for_splashTextView"
+        android:src="@drawable/ic_money"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_splashText_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="336dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_cont_btn_top_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="594dp" />
+
+    <View
+        android:id="@+id/contBtn_splash_view"
+        android:background="@drawable/rounded_rectangle_white"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_cont_btn_top_splash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/contBtn_splash_view"
+        app:layout_constraintBottom_toBottomOf="@id/contBtn_splash_view"
+        app:layout_constraintStart_toStartOf="@id/contBtn_splash_view"
+        app:layout_constraintEnd_toEndOf="@id/contBtn_splash_view"
+        android:fontFamily="@font/poppins"
+        android:textColor="#FF4B3A"
+        android:text="Get Started"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
