@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -19,5 +20,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, SplashScreen::class.java))
         }
 
+    }
+
+    override fun onBackPressed() {
+        Toast.makeText(this@MainActivity, "Please log out to go back", Toast.LENGTH_SHORT).show()
     }
 }

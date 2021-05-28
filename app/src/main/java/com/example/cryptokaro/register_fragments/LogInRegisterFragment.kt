@@ -12,7 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import com.example.cryptokaro.ForgotPasswordActivity
 import com.example.cryptokaro.MainActivity
 import com.example.cryptokaro.R
 import com.google.firebase.auth.FirebaseAuth
@@ -38,6 +40,11 @@ class LogInRegisterFragment : Fragment() {
         logInBtn.setOnClickListener {
             hideKeyboard()
             logInAccount(emailEditText, passwordEditText)
+        }
+
+        val forgotPasscode : TextView = view.findViewById(R.id.forgotPasswordText)
+        forgotPasscode.setOnClickListener {
+            startActivity(Intent(activity, ForgotPasswordActivity::class.java))
         }
 
         return view
