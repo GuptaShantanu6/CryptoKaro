@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".bottomNavFragments.HomeFragmentBottomNav"
+    android:background="#F2F2F2">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_HiText_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="33dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_HiText_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="340dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_HiText_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2_HiText_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="70dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guideline2_HiText_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2_HiText_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline2_HiText_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline2_HiText_end"
+        android:textSize="28sp"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="Loading..."/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_learning_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_learning_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="190dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guideline_learning_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_learning_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline2_HiText_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline2_HiText_end"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:text="Start your \nLearning"
+        android:textStyle="bold"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_search_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="210dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/guideline2_HiText_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline2_HiText_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_search_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_search_bottom"
+        android:background="@drawable/search_background_mainactivity"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_search_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="260dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_search_icon_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="55dp" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_search_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_search_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline_search_icon_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_search_icon_end"
+        android:src="@drawable/ic_baseline_search_24"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_search_icon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="84dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Searchtext_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="220dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Searchtext_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="250dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_search_icon_end"
+        app:layout_constraintEnd_toEndOf="@id/guideline2_HiText_end"
+        app:layout_constraintTop_toTopOf="@id/guideline_Searchtext_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_Searchtext_bottom"
+        android:fontFamily="@font/poppins"
+        android:text="Search"
+        android:textSize="20sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

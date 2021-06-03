@@ -14,18 +14,16 @@
         android:background="@drawable/rounded_rectangle_register"
         app:layout_constraintBottom_toTopOf="@id/guideline_tab_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/ic_crypto_karo__1_"
         app:layout_constraintBottom_toTopOf="@id/guideline_bottom_reg_icon"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right_reg_icon"
-        app:layout_constraintStart_toStartOf="@id/guideline_left_reg_icon"
+        app:layout_constraintEnd_toEndOf="@id/guideline_newIcon_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_newIcon_start"
         app:layout_constraintTop_toBottomOf="@id/guideline_top_reg_icon" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -33,42 +31,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="268dp" />
+        app:layout_constraintGuide_end="540dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left_reg_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="47dp" />
+        app:layout_constraintGuide_begin="27dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right_reg_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="368dp" />
+        app:layout_constraintGuide_end="27dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top_reg_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="770dp" />
+        app:layout_constraintGuide_end="710dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_tab_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="459dp" />
+        app:layout_constraintGuide_end="439dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_tab_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="518dp" />
+        app:layout_constraintGuide_end="498dp" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/register_tab"
@@ -80,7 +78,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideline_tab_bottom"
         app:tabIndicatorColor="#FF4B3A"
         app:tabSelectedTextColor="#000000"
-        app:tabTextAppearance="@style/register_tab_Text"/>
+        app:tabTextAppearance="@style/register_tab_Text"
+        app:tabRippleColor="@null"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/register_viewPager"
@@ -90,5 +89,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_newIcon_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="70dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_newIcon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="70dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
