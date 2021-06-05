@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,14 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="33dp" />
+        app:layout_constraintGuide_begin="25dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2_HiText_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="340dp" />
+        app:layout_constraintGuide_end="25dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2_HiText_top"
@@ -74,14 +75,15 @@
         android:textColor="#000000"
         android:textSize="35sp"
         android:text="Start your \nLearning"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_search_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="210dp" />
+        app:layout_constraintGuide_begin="240dp" />
 
     <View
         android:layout_width="0dp"
@@ -97,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="260dp" />
+        app:layout_constraintGuide_begin="290dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_search_icon_start"
@@ -120,17 +122,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="84dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_Searchtext_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="220dp" />
+        app:layout_constraintGuide_begin="90dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_Searchtext_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="280dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Searchtext_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -139,13 +141,77 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/guideline_search_icon_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_search_icon_end"
         app:layout_constraintEnd_toEndOf="@id/guideline2_HiText_end"
-        app:layout_constraintTop_toTopOf="@id/guideline_Searchtext_top"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_Searchtext_bottom"
+        app:layout_constraintTop_toBottomOf="@id/guideline_Searchtext_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_Searchtext_bottom"
         android:fontFamily="@font/poppins"
         android:text="Search"
         android:textSize="20sp"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeFragment_tab_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="350dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/homeFragment_TabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_homeFragment_tab_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_homeFragment_tab_bottom"
+        app:tabRippleColor="@null"
+        app:tabTextAppearance="@style/register_tab_Text"
+        app:tabIndicatorColor="#FF4B3A"
+        app:tabSelectedTextColor="#FF4B3A"
+        app:tabMode="scrollable" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeFragment_tab_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="400dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_ghomeFragment_viewPager_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="425dp" />
+    
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/homeFragment_ViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_ghomeFragment_viewPager_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_homeFragment_viewPager_bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeFragment_viewPager_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="650dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeFragment_Tab_Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeFragment_Tab_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

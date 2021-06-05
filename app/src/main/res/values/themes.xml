@@ -22,5 +22,11 @@
             name="android:textSize">18sp
         </item>
     </style>
+    
+    <style name="home_tab_text_font" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item
+            name="android:fontFamily">@font/poppins
+        </item>
+    </style>
 
 </resources>
