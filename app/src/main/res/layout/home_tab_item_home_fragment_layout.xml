@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#F2F2F2">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeicon_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="5dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeicon_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="130dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeicon_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeicon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="145dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeitem_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeitem_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="240dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeitem_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeitem_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="170dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guideline_homeitem_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_homeitem_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline_homeitem_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_homeitem_end"
+        android:background="@drawable/rounded_square_item_for_hometab_fragment"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guideline_homeicon_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_homeicon_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline_homeicon_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_homeicon_end"
+        android:src="@drawable/ic_loading"/>
+
+    <TextView
+        android:id="@+id/itemText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:fontFamily="@font/poppins"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/guideline_homeitem_text_top"
+        app:layout_constraintStart_toStartOf="@id/guideline_homeicon_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_homeicon_end"
+        app:layout_constraintBottom_toTopOf="@id/guideline_homeitem_text_bottom"
+        android:textSize="18sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeitem_text_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="210dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homeitem_text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="150dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

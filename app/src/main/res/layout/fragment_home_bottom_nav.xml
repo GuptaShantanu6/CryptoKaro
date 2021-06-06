@@ -178,7 +178,7 @@
         app:layout_constraintGuide_begin="400dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_ghomeFragment_viewPager_top"
+        android:id="@+id/guideline_homeFragment_viewPager_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -190,7 +190,7 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline_ghomeFragment_viewPager_top"
+        app:layout_constraintTop_toBottomOf="@id/guideline_homeFragment_viewPager_top"
         app:layout_constraintBottom_toBottomOf="@id/guideline_homeFragment_viewPager_bottom"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -198,7 +198,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="650dp" />
+        app:layout_constraintGuide_begin="700dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_homeFragment_Tab_Start"
