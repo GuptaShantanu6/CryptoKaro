@@ -1,8 +1,8 @@
 package com.example.cryptokaro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -10,6 +10,7 @@ import com.example.cryptokaro.bottomNavFragments.HistoryFragmentBottomNav
 import com.example.cryptokaro.bottomNavFragments.HomeFragmentBottomNav
 import com.example.cryptokaro.bottomNavFragments.NotifFragmentBottomNav
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,11 @@ class MainActivity : AppCompatActivity() {
 
             }
             true
+        }
+
+        val fab : FloatingActionButton = findViewById(R.id.fabBtn)
+        fab.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
         }
 
     }
