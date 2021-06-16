@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fab_main_activity.CoursesFromFabMainActivity"
+    android:background="#F2F2F2">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_backCBtn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_backCBtn_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_backCBtn_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_backCBtn_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <ImageView
+        android:id="@+id/cBackBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline_backCBtn_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_backCBtn_bottom"
+        app:layout_constraintStart_toEndOf="@id/guideline_backCBtn_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_backCBtn_end"
+        android:src="@drawable/ic_left_arrow"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cAnimTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cAnimBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cAnimStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cAnimEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cAnimTop"
+        app:layout_constraintBottom_toTopOf="@id/cAnimBottom"
+        app:layout_constraintStart_toStartOf="@id/cAnimStart"
+        app:layout_constraintEnd_toEndOf="@id/cAnimEnd"
+        app:lottie_rawRes="@raw/empty_box"
+        app:lottie_speed="1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emptyTextTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.61"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emptyTextBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.81"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/emptyTextStart"
+        app:layout_constraintEnd_toEndOf="@id/emptyTextEnd"
+        app:layout_constraintTop_toBottomOf="@id/emptyTextTop"
+        app:layout_constraintBottom_toTopOf="@id/emptyTextBottom"
+        android:fontFamily="@font/poppins"
+        android:textColor="#FF4B3A"
+        android:gravity="center"
+        android:text="Sorry, You don't have any courses yet "
+        android:textSize="25sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emptyTextStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emptyTextEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

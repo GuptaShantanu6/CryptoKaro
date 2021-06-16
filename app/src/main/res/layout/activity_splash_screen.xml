@@ -15,7 +15,8 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline2_circle_view"
         app:layout_constraintEnd_toEndOf="@id/guideline3_circle_view"
         app:layout_constraintStart_toStartOf="@id/guideline4_circle_view"
-        app:layout_constraintTop_toTopOf="@id/guideline5_circle_view" />
+        app:layout_constraintTop_toTopOf="@id/guideline5_circle_view"
+        android:elevation="10dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2_circle_view"
@@ -53,7 +54,8 @@
         app:layout_constraintEnd_toEndOf="@id/guideline3_circle_view"
         app:layout_constraintStart_toStartOf="@id/guideline4_circle_view"
         app:layout_constraintTop_toTopOf="@id/guideline5_circle_view"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.763"
+        android:elevation="10dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_for_splashTextView"
@@ -74,7 +76,8 @@
         android:text="Learn to \nEarn"
         android:textSize="65sp"
         android:lineSpacingExtra="-35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:elevation="10dp"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="0dp"
@@ -110,7 +113,9 @@
         app:layout_constraintTop_toBottomOf="@id/guideline_cont_btn_top_splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp"
+        android:foreground="@drawable/view_background_ripple"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,7 +128,8 @@
         android:textColor="#FF4B3A"
         android:text="Get Started"
         android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:elevation="10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,16 @@ class SplashScreen : AppCompatActivity() {
             startActivity(Intent(this@SplashScreen,RegisterActivity::class.java))
         }
 
+    }
 
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = Firebase.auth.currentUser
+
+        if (currentUser != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
     }
 }

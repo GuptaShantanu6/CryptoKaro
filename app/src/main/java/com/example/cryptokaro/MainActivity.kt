@@ -14,8 +14,11 @@ import androidx.fragment.app.Fragment
 import com.example.cryptokaro.bottomNavFragments.HistoryFragmentBottomNav
 import com.example.cryptokaro.bottomNavFragments.HomeFragmentBottomNav
 import com.example.cryptokaro.bottomNavFragments.NotifFragmentBottomNav
+import com.example.cryptokaro.fab_main_activity.CoursesFromFabMainActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlin.math.hypot
 import kotlin.math.max
 
@@ -69,6 +72,19 @@ class MainActivity : AppCompatActivity() {
 
         mFab.setOnClickListener {
             revealLayoutFun()
+        }
+
+        val logOutBtn : View = findViewById(R.id.logOutBtnReveal)
+        val cButton : View = findViewById(R.id.cButtonReveal)
+
+        logOutBtn.setOnClickListener {
+            Firebase.auth.signOut()
+            startActivity(Intent(this@MainActivity, RegisterActivity::class.java))
+            finish()
+        }
+
+        cButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CoursesFromFabMainActivity::class.java))
         }
 
     }
