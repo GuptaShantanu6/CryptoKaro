@@ -103,15 +103,36 @@ class MainActivity : AppCompatActivity() {
                 mRevealLayout.height.toDouble()
             ).toInt()
 
-            mFab.backgroundTintList = ColorStateList.valueOf(
-                ResourcesCompat.getColor(
-                    resources,
-                    R.color.appGrey,
-                    null
-                )
-            )
+//            mFab.backgroundTintList = ColorStateList.valueOf(
+//                ResourcesCompat.getColor(
+//                    resources,
+//                    R.color.appGrey,
+//                    null
+//                )
+//            )
+//
+//            mFab.setImageResource(R.drawable.ic__close)
 
-            mFab.setImageResource(R.drawable.ic__close)
+            mFab.animate()
+                .rotationBy(180F)
+                .setDuration(100)
+                .scaleX(1.1f)
+                .scaleY(1.1f)
+                .withEndAction(Runnable {
+                    kotlin.run {
+
+                        mFab.setImageResource(R.drawable.ic__close)
+
+                        mFab.animate()
+                            .rotationBy(180F)
+                            .setDuration(100)
+                            .scaleX(1F)
+                            .scaleY(1F)
+                            .start()
+
+                    }
+                })
+                .start()
 
             val anim = ViewAnimationUtils.createCircularReveal(
                 mRevealLayout,
@@ -137,15 +158,36 @@ class MainActivity : AppCompatActivity() {
 
             val endRadius = 0
 
-            mFab.backgroundTintList = ColorStateList.valueOf(
-                ResourcesCompat.getColor(
-                    resources,
-                    R.color.appOrange,
-                    null
-                )
-            )
+//            mFab.backgroundTintList = ColorStateList.valueOf(
+//                ResourcesCompat.getColor(
+//                    resources,
+//                    R.color.appOrange,
+//                    null
+//                )
+//            )
+//
+//            mFab.setImageResource(R.drawable.ic_icons8_menu)
 
-            mFab.setImageResource(R.drawable.ic_icons8_menu)
+            mFab.animate()
+                .rotationBy(180F)
+                .setDuration(100)
+                .scaleX(1.1f)
+                .scaleY(1.1f)
+                .withEndAction(Runnable {
+                    kotlin.run {
+
+                        mFab.setImageResource(R.drawable.ic_icons8_menu)
+
+                        mFab.animate()
+                            .rotationBy(180F)
+                            .setDuration(70)
+                            .scaleX(1F)
+                            .scaleY(1F)
+                            .start()
+
+                    }
+                })
+                .start()
 
             val anim = ViewAnimationUtils.createCircularReveal(
                 mRevealLayout,

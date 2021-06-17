@@ -98,7 +98,8 @@
         app:layout_constraintBottom_toTopOf="@id/profileBottom"
         app:layout_constraintStart_toEndOf="@id/rStart"
         app:layout_constraintEnd_toStartOf="@id/rEnd"
-        android:background="@drawable/gradient_rounded_rectangle"/>
+        android:background="@drawable/gradient_rounded_rectangle"
+        android:elevation="10dp"/>
 
     <View
         android:id="@+id/cButtonReveal"
@@ -108,7 +109,8 @@
         app:layout_constraintBottom_toTopOf="@id/coursesBottom"
         app:layout_constraintStart_toEndOf="@id/rStart"
         app:layout_constraintEnd_toStartOf="@id/rEnd"
-        android:background="@drawable/gradient_rounded_rectangle"/>
+        android:background="@drawable/gradient_rounded_rectangle"
+        android:elevation="10dp"/>
 
     <View
         android:id="@+id/hButtonReveal"
@@ -118,7 +120,8 @@
         app:layout_constraintBottom_toTopOf="@id/helpBottom"
         app:layout_constraintStart_toEndOf="@id/rStart"
         app:layout_constraintEnd_toStartOf="@id/rEnd"
-        android:background="@drawable/gradient_rounded_rectangle"/>
+        android:background="@drawable/gradient_rounded_rectangle"
+        android:elevation="10dp"/>
 
     <View
         android:id="@+id/logOutBtnReveal"
@@ -129,7 +132,8 @@
         app:layout_constraintStart_toEndOf="@id/logOutStart"
         app:layout_constraintEnd_toStartOf="@id/logOutEnd"
         android:background="@drawable/gradient_rounded_rectangle"
-        android:foreground="@drawable/view_background_ripple" />
+        android:foreground="@drawable/view_background_ripple"
+        android:elevation="10dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/textRevealStart"
@@ -198,7 +202,8 @@
         app:layout_constraintBottom_toTopOf="@id/ptextRevealBottom"
         android:text="My Profile"
         android:gravity="center_vertical"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:elevation="10dp"/>
 
     <TextView
         android:layout_width="0dp"
@@ -211,7 +216,8 @@
         app:layout_constraintBottom_toTopOf="@id/ptextRevealBottom"
         android:text=">"
         android:gravity="center"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:elevation="10dp"/>
 
     <TextView
         android:layout_width="0dp"
@@ -224,7 +230,8 @@
         app:layout_constraintBottom_toTopOf="@id/ctextRevealBottom"
         android:text="My Courses"
         android:gravity="center_vertical"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:elevation="10dp"/>
 
     <TextView
         android:layout_width="0dp"
@@ -237,7 +244,8 @@
         app:layout_constraintBottom_toTopOf="@id/ctextRevealBottom"
         android:text=">"
         android:gravity="center"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:elevation="10dp"/>
 
     <TextView
         android:layout_width="0dp"
@@ -250,7 +258,8 @@
         app:layout_constraintBottom_toTopOf="@id/htextRevealBottom"
         android:text="Need Help ?"
         android:gravity="center_vertical"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:elevation="10dp"/>
 
     <TextView
         android:layout_width="0dp"
@@ -263,7 +272,8 @@
         app:layout_constraintBottom_toTopOf="@id/htextRevealBottom"
         android:text=">"
         android:gravity="center"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:elevation="10dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/logOutTextStart"
@@ -304,7 +314,8 @@
         android:textColor="#ff4b3a"
         android:text="Log Out"
         android:gravity="center"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:elevation="10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
