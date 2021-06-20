@@ -35,7 +35,9 @@ class HomeTab_for_tabForHomeActivity_Fragment : Fragment() {
         recyclerView!!.layoutManager = linearLayoutManager
 
         mHomeItem = ArrayList()
-        homeItemAdapter = context?.let { HomeItemAdapterForHomeTabForHomeFragment(it, true, mHomeItem as ArrayList<HomeTabModelForHomeActivity>) }
+        homeItemAdapter = context?.let { HomeItemAdapterForHomeTabForHomeFragment(it, true,
+            mHomeItem as ArrayList<HomeTabModelForHomeActivity>) }
+
         recyclerView!!.adapter = homeItemAdapter
 
         val fdb = FirebaseDatabase.getInstance().reference.child("homeTabElements")

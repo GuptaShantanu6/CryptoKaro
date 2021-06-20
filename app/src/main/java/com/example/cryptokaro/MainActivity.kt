@@ -103,22 +103,12 @@ class MainActivity : AppCompatActivity() {
                 mRevealLayout.height.toDouble()
             ).toInt()
 
-//            mFab.backgroundTintList = ColorStateList.valueOf(
-//                ResourcesCompat.getColor(
-//                    resources,
-//                    R.color.appGrey,
-//                    null
-//                )
-//            )
-//
-//            mFab.setImageResource(R.drawable.ic__close)
-
             mFab.animate()
                 .rotationBy(180F)
                 .setDuration(100)
                 .scaleX(1.1f)
                 .scaleY(1.1f)
-                .withEndAction(Runnable {
+                .withEndAction {
                     kotlin.run {
 
                         mFab.setImageResource(R.drawable.ic__close)
@@ -131,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                             .start()
 
                     }
-                })
+                }
                 .start()
 
             val anim = ViewAnimationUtils.createCircularReveal(
@@ -158,22 +148,12 @@ class MainActivity : AppCompatActivity() {
 
             val endRadius = 0
 
-//            mFab.backgroundTintList = ColorStateList.valueOf(
-//                ResourcesCompat.getColor(
-//                    resources,
-//                    R.color.appOrange,
-//                    null
-//                )
-//            )
-//
-//            mFab.setImageResource(R.drawable.ic_icons8_menu)
-
             mFab.animate()
                 .rotationBy(180F)
                 .setDuration(100)
                 .scaleX(1.1f)
                 .scaleY(1.1f)
-                .withEndAction(Runnable {
+                .withEndAction {
                     kotlin.run {
 
                         mFab.setImageResource(R.drawable.ic_icons8_menu)
@@ -186,7 +166,7 @@ class MainActivity : AppCompatActivity() {
                             .start()
 
                     }
-                })
+                }
                 .start()
 
             val anim = ViewAnimationUtils.createCircularReveal(

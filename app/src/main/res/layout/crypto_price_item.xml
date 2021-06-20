@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cryptoTop"
+        app:layout_constraintBottom_toTopOf="@id/cryptoBottom"
+        app:layout_constraintStart_toStartOf="@id/cryptoStart"
+        app:layout_constraintEnd_toEndOf="@id/cryptoEnd"
+        android:background="@drawable/rounded_rectangle_white"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoImageStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoImageEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoImageTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.025"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoImageBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.085"/>
+
+    <ImageView
+        android:id="@+id/cryptoImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cryptoImageTop"
+        app:layout_constraintBottom_toTopOf="@id/cryptoImageBottom"
+        app:layout_constraintStart_toStartOf="@id/cryptoImageStart"
+        app:layout_constraintEnd_toEndOf="@id/cryptoImageEnd"
+        android:src="@drawable/ic_loading"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoNameStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.23"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoNameEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60"/>
+
+    <TextView
+        android:id="@+id/cryptoName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cryptoImageTop"
+        app:layout_constraintBottom_toTopOf="@id/cryptoImageBottom"
+        app:layout_constraintStart_toStartOf="@id/cryptoNameStart"
+        app:layout_constraintEnd_toEndOf="@id/cryptoNameEnd"
+        android:fontFamily="@font/poppins"
+        android:textColor="#FF4B3A"
+        android:text="Loading..."
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoPriceStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.61"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoPriceEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.94"/>
+
+    <TextView
+        android:id="@+id/cryptoPrice"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cryptoImageTop"
+        app:layout_constraintBottom_toTopOf="@id/cryptoImageBottom"
+        app:layout_constraintStart_toStartOf="@id/cryptoPriceStart"
+        app:layout_constraintEnd_toEndOf="@id/cryptoPriceEnd"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:fontFamily="@font/poppins"
+        android:text="₹₹₹₹₹"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CryptoKaro">
-        <activity android:name=".fab_main_activity.CoursesFromFabMainActivity"></activity>
+        <activity android:name=".CryptoPriceActivity"></activity>
+        <activity android:name=".fab_main_activity.CoursesFromFabMainActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegisterActivity" />
