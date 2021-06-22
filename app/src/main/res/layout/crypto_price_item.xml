@@ -95,6 +95,7 @@
         app:layout_constraintGuide_end="130dp"/>
 
     <TextView
+        android:id="@+id/cryptoNameViewInLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@id/cryptoNameStart"
@@ -103,7 +104,7 @@
         app:layout_constraintBottom_toTopOf="@id/cryptoImageBottom"
         android:gravity="center"
         android:fontFamily="@font/poppins"
-        android:text="Binance"
+        android:text="Bitcoin"
         android:textColor="#FF4B3A"
         android:textSize="25sp"/>
 
@@ -119,9 +120,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="20dp"/>
+        app:layout_constraintGuide_end="17dp"/>
 
     <TextView
+        android:id="@+id/cryptoPriceViewInLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/cryptoImageTop"
@@ -131,7 +133,7 @@
         android:gravity="center"
         android:fontFamily="@font/poppins"
         android:textColor="#000000"
-        android:text="₹₹₹₹"
+        android:text="2500000₹"
         android:textSize="18sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

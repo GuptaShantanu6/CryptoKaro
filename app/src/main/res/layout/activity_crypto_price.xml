@@ -9,6 +9,29 @@
     android:background="#F2F2F2">
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoBackStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cryptoBackEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/cryptoBackStart"
+        app:layout_constraintEnd_toEndOf="@id/cryptoBackEnd"
+        app:layout_constraintBottom_toTopOf="@id/recyclerTop"
+        android:src="@drawable/ic_left_arrow"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/recyclerTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,12 +39,23 @@
         app:layout_constraintGuide_percent="0.1"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cryptoRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/recyclerTop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/crypto_price_item"/>
+        tools:listitem="@layout/crypto_price_item" />
+
+    <ProgressBar
+        android:id="@+id/cryptoPriceProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerTop"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

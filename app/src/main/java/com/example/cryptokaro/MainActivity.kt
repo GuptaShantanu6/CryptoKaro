@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         val logOutBtn : View = findViewById(R.id.logOutBtnReveal)
         val cButton : View = findViewById(R.id.cButtonReveal)
+        val pricesButton : View = findViewById(R.id.pricesButtonReveal)
 
         logOutBtn.setOnClickListener {
             Firebase.auth.signOut()
@@ -85,6 +86,10 @@ class MainActivity : AppCompatActivity() {
 
         cButton.setOnClickListener {
             startActivity(Intent(this@MainActivity, CoursesFromFabMainActivity::class.java))
+        }
+
+        pricesButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CryptoPriceActivity::class.java))
         }
 
     }
