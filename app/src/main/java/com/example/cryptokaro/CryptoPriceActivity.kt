@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,19 +48,28 @@ class CryptoPriceActivity : AppCompatActivity() {
 
         progressBar = findViewById(R.id.cryptoPriceProgressBar)
 
-//        recyclerView!!.visibility = View.GONE
-//        progressBar.visibility = View.VISIBLE
-
-        progressBar.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
+        recyclerView!!.visibility = View.GONE
 
         cryptoPriceDisplay(progressBar)
+
+        val refreshBtn : ImageView = findViewById(R.id.cryptoRefreshBtn)
+        refreshBtn.setOnClickListener {
+            progressBar.visibility = View.VISIBLE
+            recyclerView!!.visibility = View.GONE
+
+            cryptoPriceDisplay(progressBar)
+        }
+
+        val cryptoBackBtn : ImageView = findViewById(R.id.cryptoBackButton)
+        cryptoBackBtn.setOnClickListener {
+            this@CryptoPriceActivity.onBackPressed()
+        }
 
     }
 
     private fun cryptoPriceDisplay(progressBar: ProgressBar) {
 
-//        progressBar.visibility = View.VISIBLE
-//        recyclerView?.visibility = View.GONE
 
         cCrypto?.clear()
 
@@ -82,17 +92,77 @@ class CryptoPriceActivity : AppCompatActivity() {
                 val myData = Klaxon().parse<cryptoAPI>(json)
 
                 if (myData != null) {
-                    val binanceCoinPrice = myData.binancecoin.inr.toString()
-                    val newCrypto = cryptoInfoFromAPI("Binance", binanceCoinPrice)
+                    val binanceCoinPrice = myData.binancecoin.inr.toString() + " ₹"
+                    var newCrypto = cryptoInfoFromAPI("Binance", binanceCoinPrice)
+                    cCrypto?.add(newCrypto)
+
+                    val bitcoin = myData.bitcoin.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Bitcoin", bitcoin)
+                    cCrypto?.add(newCrypto)
+
+                    val cardano = myData.cardano.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Cardano", cardano)
+                    cCrypto?.add(newCrypto)
+
+                    val chainlink = myData.chainlink.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Chainlink", chainlink)
+                    cCrypto?.add(newCrypto)
+
+                    val dai = myData.dai.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Dai", dai)
+                    cCrypto?.add(newCrypto)
+
+                    val doge = myData.dogecoin.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Dogecoin", doge)
+                    cCrypto?.add(newCrypto)
+
+                    val ether = myData.ethereum.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Ethereum", ether)
+                    cCrypto?.add(newCrypto)
+
+                    val hex = myData.hex.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Hex", hex)
+                    cCrypto?.add(newCrypto)
+
+                    val lite = myData.litecoin.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Litecoin", lite)
+                    cCrypto?.add(newCrypto)
+
+                    val polka = myData.polkadot.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Polkadot", polka)
+                    cCrypto?.add(newCrypto)
+
+                    val ripple = myData.ripple.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Ripple", ripple)
+                    cCrypto?.add(newCrypto)
+
+                    val solana = myData.solana.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Solana", solana)
+                    cCrypto?.add(newCrypto)
+
+                    val Stellar = myData.bitcoin.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Stellar", Stellar)
+                    cCrypto?.add(newCrypto)
+
+                    val tether = myData.tether.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Tether", tether)
+                    cCrypto?.add(newCrypto)
+
+                    val tron = myData.tron.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Tron", tron)
+                    cCrypto?.add(newCrypto)
+
+                    val uni = myData.uniswap.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Uniswap", uni)
+                    cCrypto?.add(newCrypto)
+
+                    val ve = myData.vechain.inr.toString() + " ₹"
+                    newCrypto = cryptoInfoFromAPI("Vechain", ve)
+                    cCrypto?.add(newCrypto)
 
                     Log.d("fetched price", binanceCoinPrice)
                     Log.d("newCrypto Status", newCrypto.cryptoPrice)
-
-                    cCrypto?.add(newCrypto)
-
                     Log.d("current cCrypto size", cCrypto?.size.toString())
-
-                    cryptoAdapter?.notifyDataSetChanged()
 
                 }
 
@@ -100,11 +170,16 @@ class CryptoPriceActivity : AppCompatActivity() {
 
         })
 
-//        Log.d("current cCrypto size", cCrypto?.size.toString())
-//
-//        cryptoAdapter?.notifyDataSetChanged()
-//
-//        progressBar.visibility = View.GONE
-//        recyclerView?.visibility = View.VISIBLE
+        client.dispatcher.executorService.shutdown()
+
+        while (cCrypto?.size == 0) {
+            //Do nothing, as waiting for the above API Call to complete its execution
+        }
+
+        cryptoAdapter?.notifyDataSetChanged()
+
+        progressBar.visibility = View.GONE
+        recyclerView!!.visibility = View.VISIBLE
+
     }
 }
