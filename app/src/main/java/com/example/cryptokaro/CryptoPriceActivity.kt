@@ -26,6 +26,8 @@ class CryptoPriceActivity : AppCompatActivity() {
     private var cCrypto : MutableList<cryptoInfoFromAPI>? = null
     private lateinit var progressBar : ProgressBar
 
+    private var x : Int = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crypto_price)
@@ -48,30 +50,19 @@ class CryptoPriceActivity : AppCompatActivity() {
 
         progressBar = findViewById(R.id.cryptoPriceProgressBar)
 
-        progressBar.visibility = View.VISIBLE
-        recyclerView!!.visibility = View.GONE
-
-        cryptoPriceDisplay(progressBar)
-
-        val refreshBtn : ImageView = findViewById(R.id.cryptoRefreshBtn)
-        refreshBtn.setOnClickListener {
-            progressBar.visibility = View.VISIBLE
-            recyclerView!!.visibility = View.GONE
-
-            cryptoPriceDisplay(progressBar)
-        }
-
         val cryptoBackBtn : ImageView = findViewById(R.id.cryptoBackButton)
         cryptoBackBtn.setOnClickListener {
             this@CryptoPriceActivity.onBackPressed()
+            finish()
         }
+
+        progressBar.visibility = View.VISIBLE
+
+        cryptoPriceDisplay(progressBar)
 
     }
 
     private fun cryptoPriceDisplay(progressBar: ProgressBar) {
-
-
-        cCrypto?.clear()
 
         val urlCoinGecko = "https://api.coingecko.com/api/v3/simple/price?ids=binancecoin%2Cbitcoin%2Ccardano%2Cchainlink%2Cdai%2Cdogecoin%2Cethereum%2Chex%2Clitecoin%2Cpolkadot%2Cripple%2Csolana%2Cstellar%2Ctether%2Ctron%2Cuniswap%2Cvechain&vs_currencies=INR"
         val client = OkHttpClient()
@@ -92,8 +83,9 @@ class CryptoPriceActivity : AppCompatActivity() {
                 val myData = Klaxon().parse<cryptoAPI>(json)
 
                 if (myData != null) {
-                    val binanceCoinPrice = myData.binancecoin.inr.toString() + " ₹"
-                    var newCrypto = cryptoInfoFromAPI("Binance", binanceCoinPrice)
+
+                    val binance = myData.binancecoin.inr.toString() + " ₹"
+                    var newCrypto = cryptoInfoFromAPI("Binance", binance)
                     cCrypto?.add(newCrypto)
 
                     val bitcoin = myData.bitcoin.inr.toString() + " ₹"
@@ -158,11 +150,12 @@ class CryptoPriceActivity : AppCompatActivity() {
 
                     val ve = myData.vechain.inr.toString() + " ₹"
                     newCrypto = cryptoInfoFromAPI("Vechain", ve)
-                    cCrypto?.add(newCrypto)
 
-                    Log.d("fetched price", binanceCoinPrice)
+                    Log.d("fetched price", binance)
                     Log.d("newCrypto Status", newCrypto.cryptoPrice)
                     Log.d("current cCrypto size", cCrypto?.size.toString())
+
+                    x = cCrypto!!.size
 
                 }
 
@@ -173,13 +166,15 @@ class CryptoPriceActivity : AppCompatActivity() {
         client.dispatcher.executorService.shutdown()
 
         while (cCrypto?.size == 0) {
-            //Do nothing, as waiting for the above API Call to complete its execution
+            //Do nothing and wait....
         }
 
-        cryptoAdapter?.notifyDataSetChanged()
+        Thread.sleep(3000)
 
         progressBar.visibility = View.GONE
-        recyclerView!!.visibility = View.VISIBLE
+        recyclerView?.visibility = View.VISIBLE
+
 
     }
+
 }

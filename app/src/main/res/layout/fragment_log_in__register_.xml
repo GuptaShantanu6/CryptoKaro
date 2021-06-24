@@ -12,14 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="30dp" />
+        app:layout_constraintGuide_percent="0.076" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_textHeading_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="200dp" />
+        app:layout_constraintGuide_percent="0.51" />
 
     <TextView
         android:layout_width="0dp"
@@ -38,28 +38,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="40dp" />
+        app:layout_constraintGuide_percent="0.051"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_textHeadingEmail_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="60dp" />
+        app:layout_constraintGuide_percent="0.076"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_textfield_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="50dp"/>
+        app:layout_constraintGuide_percent="0.924"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_emailfield_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="115dp" />
+        app:layout_constraintGuide_percent="0.146" />
 
     <EditText
         android:id="@+id/emailLogInRegisterEditText"
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="140dp" />
+        app:layout_constraintGuide_percent="0.177"/>
 
     <TextView
         android:layout_width="0dp"
@@ -99,14 +99,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="160dp" />
+        app:layout_constraintGuide_percent="0.204" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_passwordField_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="215dp" />
+        app:layout_constraintGuide_percent="0.275"/>
 
     <EditText
         android:id="@+id/passwordLogInRegisterEditText"
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="230dp" />
+        app:layout_constraintGuide_percent="0.294" />
 
     <TextView
         android:id="@+id/forgotPasswordText"
@@ -148,14 +148,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="260dp" />
+        app:layout_constraintGuide_percent="0.33" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_loginBtn_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="360dp" />
+        app:layout_constraintGuide_percent="0.46" />
 
     <View
         android:id="@+id/register_login_view"
@@ -187,20 +187,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="410dp" />
+        app:layout_constraintGuide_percent="0.522" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_loginBtn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="100dp" />
+        app:layout_constraintGuide_percent="0.254" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_loginBtn_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="100dp" />
+        app:layout_constraintGuide_percent="0.746"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
