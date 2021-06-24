@@ -2,7 +2,6 @@ package com.example.cryptokaro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
@@ -10,12 +9,12 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.beust.klaxon.Klaxon
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
 import com.example.cryptokaro.adapters.cryptoPriceAdapter
-import com.example.cryptokaro.api.cryptoAPI
 import com.example.cryptokaro.model.cryptoInfoFromAPI
+import com.example.cryptokaro.singleton.CryptoPriceSingleton
 import okhttp3.*
-import java.io.IOException
 
 //https://api.coingecko.com/api/v3/simple/price?ids=binancecoin%2Cbitcoin%2Ccardano%2Cchainlink%2Cdai%2Cdogecoin%2Cethereum%2Chex%2Clitecoin%2Cpolkadot%2Cripple%2Csolana%2Cstellar%2Ctether%2Ctron%2Cuniswap%2Cvechain&vs_currencies=INR
 
@@ -26,7 +25,7 @@ class CryptoPriceActivity : AppCompatActivity() {
     private var cCrypto : MutableList<cryptoInfoFromAPI>? = null
     private lateinit var progressBar : ProgressBar
 
-    private var x : Int = -1
+    private var x : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,122 +57,131 @@ class CryptoPriceActivity : AppCompatActivity() {
 
         progressBar.visibility = View.VISIBLE
 
-        cryptoPriceDisplay(progressBar)
+        cryptoDisplayByVolleyAndSingleton(object : VolleyCallBack {
+            override fun onSuccess() {
+                super.onSuccess()
+
+                progressBar.visibility = View.GONE
+                recyclerView?.visibility = View.VISIBLE
+                cryptoAdapter?.notifyDataSetChanged()
+
+            }
+        })
+
+        val refreshBtn : ImageView = findViewById(R.id.cryptoRefreshBtn)
+        refreshBtn.visibility = View.VISIBLE
+
+        refreshBtn.setOnClickListener {
+            recyclerView?.visibility = View.GONE
+            progressBar.visibility = View.VISIBLE
+
+            cryptoDisplayByVolleyAndSingleton(object : VolleyCallBack {
+                override fun onSuccess() {
+                    super.onSuccess()
+
+                    progressBar.visibility = View.GONE
+                    recyclerView?.visibility = View.VISIBLE
+                    cryptoAdapter?.notifyDataSetChanged()
+
+                }
+            })
+
+        }
 
     }
 
-    private fun cryptoPriceDisplay(progressBar: ProgressBar) {
+    interface VolleyCallBack {
+        fun onSuccess(){
+
+        }
+    }
+
+    private fun cryptoDisplayByVolleyAndSingleton(callBack: VolleyCallBack) {
+
+        cCrypto?.clear()
 
         val urlCoinGecko = "https://api.coingecko.com/api/v3/simple/price?ids=binancecoin%2Cbitcoin%2Ccardano%2Cchainlink%2Cdai%2Cdogecoin%2Cethereum%2Chex%2Clitecoin%2Cpolkadot%2Cripple%2Csolana%2Cstellar%2Ctether%2Ctron%2Cuniswap%2Cvechain&vs_currencies=INR"
-        val client = OkHttpClient()
-        val request = Request.Builder().url(urlCoinGecko).build()
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                e.printStackTrace()
-            }
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, urlCoinGecko, null,
+            { response ->
+                x = response.getJSONObject("binancecoin").getString("inr").toString() + " ₹"
+                var newCrypto = cryptoInfoFromAPI("Binance",x)
+                cCrypto?.add(newCrypto)
 
-            override fun onResponse(call: Call, response: Response) {
-                if (!response.isSuccessful) {
-                    System.err.println("Response not successful")
-                    Toast.makeText(this@CryptoPriceActivity, "Please try again later", Toast.LENGTH_SHORT).show()
-                }
+                x = response.getJSONObject("polkadot").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Polkadot",x)
+                cCrypto?.add(newCrypto)
 
-                val json = response.body!!.string()
-                val myData = Klaxon().parse<cryptoAPI>(json)
+                x = response.getJSONObject("tron").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Tron",x)
+                cCrypto?.add(newCrypto)
 
-                if (myData != null) {
+                x = response.getJSONObject("chainlink").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Chainlink",x)
+                cCrypto?.add(newCrypto)
 
-                    val binance = myData.binancecoin.inr.toString() + " ₹"
-                    var newCrypto = cryptoInfoFromAPI("Binance", binance)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("ethereum").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Ethereum",x)
+                cCrypto?.add(newCrypto)
 
-                    val bitcoin = myData.bitcoin.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Bitcoin", bitcoin)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("uniswap").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Uniswap",x)
+                cCrypto?.add(newCrypto)
 
-                    val cardano = myData.cardano.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Cardano", cardano)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("vechain").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Vechain",x)
+                cCrypto?.add(newCrypto)
 
-                    val chainlink = myData.chainlink.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Chainlink", chainlink)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("solana").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Solana",x)
+                cCrypto?.add(newCrypto)
 
-                    val dai = myData.dai.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Dai", dai)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("litecoin").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Litecoin",x)
+                cCrypto?.add(newCrypto)
 
-                    val doge = myData.dogecoin.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Dogecoin", doge)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("tether").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Tether",x)
+                cCrypto?.add(newCrypto)
 
-                    val ether = myData.ethereum.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Ethereum", ether)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("bitcoin").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Bitcoin",x)
+                cCrypto?.add(newCrypto)
 
-                    val hex = myData.hex.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Hex", hex)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("dogecoin").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Dogecoin",x)
+                cCrypto?.add(newCrypto)
 
-                    val lite = myData.litecoin.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Litecoin", lite)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("ripple").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Ripple",x)
+                cCrypto?.add(newCrypto)
 
-                    val polka = myData.polkadot.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Polkadot", polka)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("stellar").getString("inr").toString() + " ₹"
+                 newCrypto = cryptoInfoFromAPI("Stellar",x)
+                cCrypto?.add(newCrypto)
 
-                    val ripple = myData.ripple.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Ripple", ripple)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("cardano").getString("inr").toString() + " ₹"
+                newCrypto = cryptoInfoFromAPI("Cardano",x)
+                cCrypto?.add(newCrypto)
 
-                    val solana = myData.solana.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Solana", solana)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("dai").getString("inr").toString() + " ₹"
+                newCrypto = cryptoInfoFromAPI("Dai",x)
+                cCrypto?.add(newCrypto)
 
-                    val Stellar = myData.bitcoin.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Stellar", Stellar)
-                    cCrypto?.add(newCrypto)
+                x = response.getJSONObject("hex").getString("inr").toString() + " ₹"
+                newCrypto = cryptoInfoFromAPI("Hex",x)
+                cCrypto?.add(newCrypto)
 
-                    val tether = myData.tether.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Tether", tether)
-                    cCrypto?.add(newCrypto)
+                callBack.onSuccess()
 
-                    val tron = myData.tron.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Tron", tron)
-                    cCrypto?.add(newCrypto)
+            },
+            {
+                Toast.makeText(this, "Please Check Your Internet Connection", Toast.LENGTH_LONG).show()
+            })
 
-                    val uni = myData.uniswap.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Uniswap", uni)
-                    cCrypto?.add(newCrypto)
-
-                    val ve = myData.vechain.inr.toString() + " ₹"
-                    newCrypto = cryptoInfoFromAPI("Vechain", ve)
-
-                    Log.d("fetched price", binance)
-                    Log.d("newCrypto Status", newCrypto.cryptoPrice)
-                    Log.d("current cCrypto size", cCrypto?.size.toString())
-
-                    x = cCrypto!!.size
-
-                }
-
-            }
-
-        })
-
-        client.dispatcher.executorService.shutdown()
-
-        while (cCrypto?.size == 0) {
-            //Do nothing and wait....
-        }
-
-        Thread.sleep(3000)
-
-        progressBar.visibility = View.GONE
-        recyclerView?.visibility = View.VISIBLE
-
+        // Add the request to the RequestQueue.
+        CryptoPriceSingleton.getInstance(this,).addToRequestQueue(jsonObjectRequest)
 
     }
 

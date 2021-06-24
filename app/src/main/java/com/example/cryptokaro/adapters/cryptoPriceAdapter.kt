@@ -25,59 +25,58 @@ class cryptoPriceAdapter (private var cContext : Context, private var isFragment
         holder.crypto_name.text = crypto.cryptoName
         holder.crypto_price.text = crypto.cryptoPrice
 
-        if (crypto.cryptoName == "Binance") {
-//            holder.crypto_image.setBackgroundResource(R.drawable.ic_binance_logo)
-            Glide.with(holder.itemView.context).load("https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=010").into(holder.crypto_image)
-        }
-        else if (crypto.cryptoName == "Bitcoin") {
-            holder.crypto_image.setImageResource(R.drawable.ic_bitcoin)
-        }
-        else if (crypto.cryptoName == "Cardano") {
-            holder.crypto_image.setImageResource(R.drawable.ic_cardano)
-        }
-        else if (crypto.cryptoName == "Chainlink") {
-            holder.crypto_image.setImageResource(R.drawable.ic_qvshhryc)
-        }
-        else if (crypto.cryptoName == "Dai") {
-            holder.crypto_image.setImageResource(R.drawable.ic_dai_2)
-        }
-        else if (crypto.cryptoName == "Dogecoin") {
-            holder.crypto_image.setImageResource(R.drawable.ic_iconfinder_2785490_blockchain_dogecoin_icon)
-        }
-        else if (crypto.cryptoName == "Ethereum") {
-            holder.crypto_image.setImageResource(R.drawable.ic_ethereum_1)
-        }
-        else if (crypto.cryptoName == "Hex") {
-            holder.crypto_image.setImageResource(R.drawable.hex)
-        }
-        else if (crypto.cryptoName == "Litecoin") {
-            holder.crypto_image.setImageResource(R.drawable.ic_litecoin)
-        }
-        else if (crypto.cryptoName == "Polkadot") {
-            holder.crypto_image.setImageResource(R.drawable.ic_polkadot_new_dot_logo)
-        }
-        else if (crypto.cryptoName == "Ripple") {
-            holder.crypto_image.setImageResource(R.drawable.ic_xrp_symbol_black)
-        }
-        else if (crypto.cryptoName == "Solana") {
-            holder.crypto_image.setImageResource(R.drawable.ic_solana_sol_logo)
-        }
-        else if (crypto.cryptoName == "Stellar") {
-            holder.crypto_image.setImageResource(R.drawable.ic_stellar_xlm_logo)
-        }
-        else if (crypto.cryptoName == "Tether") {
-//            holder.crypto_image.setImageResource(R.drawable.ic_tether_usdt_logo)
-            Glide.with(holder.itemView.context).load("https://cryptologos.cc/logos/tether-usdt-logo.svg?v=010").into(holder.crypto_image)
-
-        }
-        else if (crypto.cryptoName == "Tron") {
-            holder.crypto_image.setImageResource(R.drawable.ic_tron_trx_logo)
-        }
-        else if (crypto.cryptoName == "Uniswap") {
-            holder.crypto_image.setImageResource(R.drawable.ic_uniswap_uni_logo)
-        }
-        else if (crypto.cryptoName == "Vechain") {
-            holder.crypto_image.setImageResource(R.drawable.ic_vechain_vet_logo)
+        when (crypto.cryptoName) {
+            "Binance" -> {
+                holder.crypto_image.setBackgroundResource(R.drawable.ic_binance_logo)
+            }
+            "Bitcoin" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_bitcoin)
+            }
+            "Cardano" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_cardano)
+            }
+            "Chainlink" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_qvshhryc)
+            }
+            "Dai" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_dai_2)
+            }
+            "Dogecoin" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_iconfinder_2785490_blockchain_dogecoin_icon)
+            }
+            "Ethereum" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_ethereum_1)
+            }
+            "Hex" -> {
+                holder.crypto_image.setImageResource(R.drawable.hex)
+            }
+            "Litecoin" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_litecoin)
+            }
+            "Polkadot" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_polkadot_new_dot_logo)
+            }
+            "Ripple" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_xrp_symbol_black)
+            }
+            "Solana" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_solana_sol_logo)
+            }
+            "Stellar" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_stellar_xlm_logo)
+            }
+            "Tether" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_tether_usdt_logo)
+            }
+            "Tron" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_tron_trx_logo)
+            }
+            "Uniswap" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_uniswap_uni_logo)
+            }
+            "Vechain" -> {
+                holder.crypto_image.setImageResource(R.drawable.ic_vechain_vet_logo)
+            }
         }
 
     }

@@ -44,7 +44,8 @@
         app:layout_constraintBottom_toTopOf="@id/recyclerTop"
         app:layout_constraintStart_toStartOf="@id/cryptoRefreshStart"
         app:layout_constraintEnd_toEndOf="@id/cryptoRefreshEnd"
-        android:src="@drawable/ic_icons8_refresh" />
+        android:src="@drawable/ic_icons8_refresh"
+        android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/cryptoBackButton"

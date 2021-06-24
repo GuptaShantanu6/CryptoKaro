@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="90dp"
     android:background="#F2F2F2">
 
     <androidx.constraintlayout.widget.Guideline
@@ -136,5 +136,11 @@
         android:textColor="#000000"
         android:text="2500000₹"
         android:textSize="18sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/indi_item_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="85dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
