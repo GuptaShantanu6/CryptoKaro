@@ -1,6 +1,7 @@
 package com.example.cryptokaro.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cryptokaro.R
 import com.example.cryptokaro.model.cryptoInfoFromAPI
+import com.google.firebase.storage.FirebaseStorage
 
 class cryptoPriceAdapter (private var cContext : Context, private var isFragment : Boolean = false, private var cCrypto : List<cryptoInfoFromAPI>)
     : RecyclerView.Adapter<cryptoPriceAdapter.ViewHolder>() {
@@ -25,59 +27,15 @@ class cryptoPriceAdapter (private var cContext : Context, private var isFragment
         holder.crypto_name.text = crypto.cryptoName
         holder.crypto_price.text = crypto.cryptoPrice
 
-        when (crypto.cryptoName) {
-            "Binance" -> {
-                holder.crypto_image.setBackgroundResource(R.drawable.ic_binance_logo)
-            }
-            "Bitcoin" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_bitcoin)
-            }
-            "Cardano" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_cardano)
-            }
-            "Chainlink" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_qvshhryc)
-            }
-            "Dai" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_dai_2)
-            }
-            "Dogecoin" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_iconfinder_2785490_blockchain_dogecoin_icon)
-            }
-            "Ethereum" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_ethereum_1)
-            }
-            "Hex" -> {
-                holder.crypto_image.setImageResource(R.drawable.hex)
-            }
-            "Litecoin" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_litecoin)
-            }
-            "Polkadot" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_polkadot_new_dot_logo)
-            }
-            "Ripple" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_xrp_symbol_black)
-            }
-            "Solana" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_solana_sol_logo)
-            }
-            "Stellar" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_stellar_xlm_logo)
-            }
-            "Tether" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_tether_usdt_logo)
-            }
-            "Tron" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_tron_trx_logo)
-            }
-            "Uniswap" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_uniswap_uni_logo)
-            }
-            "Vechain" -> {
-                holder.crypto_image.setImageResource(R.drawable.ic_vechain_vet_logo)
-            }
+        FirebaseStorage.getInstance().reference.child("Crypto Images").child(crypto.cryptoName+".png")
+            .downloadUrl.addOnSuccessListener {
+            val x = it.toString()
+            Glide.with(holder.itemView.context).load(x).into(holder.crypto_image)
         }
+
+        Log.d("crypto Name ",crypto.cryptoName)
+
+
 
     }
 

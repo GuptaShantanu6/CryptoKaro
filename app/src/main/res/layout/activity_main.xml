@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toBottomOf="@id/fabBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/fabStart"
-        android:backgroundTint="#3055BD"
+        android:backgroundTint="#FF4B3A"
         app:tint="#F2F2F2"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -83,6 +83,8 @@ class CryptoPriceActivity : AppCompatActivity() {
                     recyclerView?.visibility = View.VISIBLE
                     cryptoAdapter?.notifyDataSetChanged()
 
+                    recyclerView!!.layoutManager?.scrollToPosition(0)
+                    
                 }
             })
 
@@ -181,7 +183,7 @@ class CryptoPriceActivity : AppCompatActivity() {
             })
 
         // Add the request to the RequestQueue.
-        CryptoPriceSingleton.getInstance(this,).addToRequestQueue(jsonObjectRequest)
+        CryptoPriceSingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
 
     }
 
