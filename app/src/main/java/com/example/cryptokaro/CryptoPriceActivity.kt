@@ -16,8 +16,6 @@ import com.example.cryptokaro.model.cryptoInfoFromAPI
 import com.example.cryptokaro.singleton.CryptoPriceSingleton
 import okhttp3.*
 
-//https://api.coingecko.com/api/v3/simple/price?ids=binancecoin%2Cbitcoin%2Ccardano%2Cchainlink%2Cdai%2Cdogecoin%2Cethereum%2Chex%2Clitecoin%2Cpolkadot%2Cripple%2Csolana%2Cstellar%2Ctether%2Ctron%2Cuniswap%2Cvechain&vs_currencies=INR
-
 class CryptoPriceActivity : AppCompatActivity() {
 
     private var recyclerView : RecyclerView? = null

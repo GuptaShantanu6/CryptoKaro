@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="250dp"
     android:background="#F2F2F2">
 
     <androidx.constraintlayout.widget.Guideline
@@ -69,7 +69,8 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline_homeitem_bottom"
         app:layout_constraintStart_toStartOf="@id/guideline_homeitem_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_homeitem_end"
-        android:background="@drawable/rounded_square_item_for_hometab_fragment"/>
+        android:background="@drawable/rounded_square_item_for_hometab_fragment"
+        android:elevation="5dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/itemImageView"
@@ -79,7 +80,8 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline_homeicon_bottom"
         app:layout_constraintStart_toStartOf="@id/guideline_homeicon_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_homeicon_end"
-        android:src="@drawable/ic_loading"/>
+        android:src="@drawable/ic_loading"
+        android:elevation="5dp"/>
 
     <TextView
         android:id="@+id/itemText"
@@ -92,7 +94,8 @@
         app:layout_constraintStart_toStartOf="@id/guideline_homeicon_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_homeicon_end"
         app:layout_constraintBottom_toTopOf="@id/guideline_homeitem_text_bottom"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:elevation="5dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_homeitem_text_bottom"
