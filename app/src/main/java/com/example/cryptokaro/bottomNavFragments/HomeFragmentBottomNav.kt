@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.cryptokaro.R
 import com.example.cryptokaro.adapters.HomeFragmentAdapter
@@ -66,22 +67,22 @@ class HomeFragmentBottomNav : Fragment() {
         val UID = Firebase.auth.currentUser?.uid.toString()
         val userName : TextView = view.findViewById(R.id.userNameField)
 
-        var getName : String = ""
-        var finalName : String = ""
-
-        val fDb = FirebaseDatabase.getInstance().reference.child("Users")
-        fDb.addValueEventListener(object : ValueEventListener{
-            @SuppressLint("SetTextI18n")
-            override fun onDataChange(snapshot: DataSnapshot) {
-                userName.text = "Hey " + snapshot.child(UID).child("name").value.toString() + " \uD83D\uDE0A"
-//                getName = snapshot.child(UID).child("name").value.toString()
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })
+//        var getName : String = ""
+//        var finalName : String = ""
+//
+//        val fDb = FirebaseDatabase.getInstance().reference.child("Users")
+//        fDb.addValueEventListener(object : ValueEventListener{
+//            @SuppressLint("SetTextI18n")
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                userName.text = "Hey " + snapshot.child(UID).child("name").value.toString() + " \uD83D\uDE0A"
+////                getName = snapshot.child(UID).child("name").value.toString()
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                Toast.makeText(requireContext(), "PLease restart the application", Toast.LENGTH_SHORT).show()
+//            }
+//
+//        })
 
 //        for (x in getName) {
 //            if (x != ' ') {

@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".homeTabLayoutFragments.InvestingTab_for_tabForHomeActivity_Fragment"
-    android:background="#F2F2F2">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_empty_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline_empty_top"
-        app:layout_constraintBottom_toTopOf="@id/guideline_empty_bottom"
-        android:gravity="center"
-        android:fontFamily="@font/poppins"
-        android:textColor="#FF4B3A"
-        android:text="No Content Yet"
-        android:textSize="23sp"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_empty_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="100dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_empty_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_empty_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="140dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_empty_top"
+            app:layout_constraintBottom_toTopOf="@id/guideline_empty_bottom"
+            android:gravity="center"
+            android:fontFamily="@font/poppins"
+            android:textColor="#FF4B3A"
+            android:text="No Content Yet"
+            android:autoSizeTextType="uniform"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

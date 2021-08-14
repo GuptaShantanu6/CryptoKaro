@@ -1,223 +1,456 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    tools:context=".register_fragments.SignUpRegisterFragment">-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_textHeading_start"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="30dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_textHeading_end"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="200dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_textHeadingEmail_top"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="40dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_textHeadingEmail_bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="60dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_textfield_end"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_end="30dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_emailfield_bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="115dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_passwordHeading_top"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="140dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_passwordHeading_bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="160dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_passwordField_bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="215dp" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:text="Name"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_textHeadingEmail_bottom"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline_textHeadingEmail_top"-->
+<!--        android:textStyle="bold"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/nameEditTextSignUp"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:backgroundTint="#FF4B3A"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textCursorDrawable="@drawable/edittext_cursor_register"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_emailfield_bottom"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline_textHeadingEmail_bottom" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:text="Email Address"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_passwordHeading_bottom"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline_passwordHeading_top"-->
+<!--        android:textStyle="bold"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/emailEditTextSignUp"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline_passwordHeading_bottom"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_passwordField_bottom"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"-->
+<!--        android:backgroundTint="#FF4B3A"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:textCursorDrawable="@drawable/edittext_cursor_register"-->
+<!--        android:textStyle="bold"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_newPassHeading_top"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="240dp" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:text="Password"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_newPassHeading_botttom"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline_newPassHeading_top"-->
+<!--        android:textStyle="bold"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_newPassHeading_botttom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="260dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/passwordEditTextSignUp"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline_newPassHeading_botttom"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_newPassField_Bottom"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"-->
+<!--        android:backgroundTint="#FF4B3A"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:textCursorDrawable="@drawable/edittext_cursor_register"-->
+<!--        android:textStyle="bold"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_newPassField_Bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="315dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_signUpBtn_top"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="350dp" />-->
+
+<!--    <View-->
+<!--        android:id="@+id/register_signUp_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/guideline_signUpBtn_top"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/guideline_signUpBtn_bottom"-->
+<!--        app:layout_constraintStart_toStartOf="@id/guideline_signUpBtn_start"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_signUpBtn_end"-->
+<!--        android:background="@drawable/rounded_rectangle_orange"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="@id/register_signUp_view"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/register_signUp_view"-->
+<!--        app:layout_constraintStart_toStartOf="@id/register_signUp_view"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/register_signUp_view"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="Sign Up"-->
+<!--        android:textSize="17sp"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_signUpBtn_bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="400dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_signUpBtn_start"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="100dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline_signUpBtn_end"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_end="100dp" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".register_fragments.SignUpRegisterFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textHeading_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="30dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textHeading_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="200dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_textHeading_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.07"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textHeadingEmail_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="40dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_textHeading_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.49"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textHeadingEmail_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="60dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_textHeadingEmail_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="40dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_textfield_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="30dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_textHeadingEmail_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="60dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_emailfield_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="115dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_textfield_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.93" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_passwordHeading_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="140dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_emailfield_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="115dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_passwordHeading_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="160dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_passwordHeading_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="140dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_passwordField_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="215dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_passwordHeading_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="160dp" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/poppins"
-        android:text="Name"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/guideline_textHeadingEmail_bottom"
-        app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"
-        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline_textHeadingEmail_top"
-        android:textStyle="bold"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_passwordField_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="215dp" />
 
-    <EditText
-        android:id="@+id/nameEditTextSignUp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="#FF4B3A"
-        android:fontFamily="@font/poppins"
-        android:inputType="textPersonName"
-        android:textCursorDrawable="@drawable/edittext_cursor_register"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/guideline_emailfield_bottom"
-        app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"
-        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline_textHeadingEmail_bottom" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/poppins"
+            android:text="Name"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_textHeadingEmail_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_textHeadingEmail_top"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/poppins"
-        android:text="Email Address"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/guideline_passwordHeading_bottom"
-        app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"
-        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline_passwordHeading_top"
-        android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/nameEditTextSignUp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#FF4B3A"
+            android:fontFamily="@font/poppins"
+            android:inputType="textPersonName"
+            android:textCursorDrawable="@drawable/edittext_cursor_register"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/guideline_emailfield_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_textHeadingEmail_bottom" />
 
-    <EditText
-        android:id="@+id/emailEditTextSignUp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_passwordHeading_bottom"
-        app:layout_constraintBottom_toTopOf="@id/guideline_passwordField_bottom"
-        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"
-        android:backgroundTint="#FF4B3A"
-        android:fontFamily="@font/poppins"
-        android:inputType="textEmailAddress"
-        android:textCursorDrawable="@drawable/edittext_cursor_register"
-        android:textStyle="bold"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/poppins"
+            android:text="Email Address"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_passwordHeading_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_passwordHeading_top"
+            android:textStyle="bold"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_newPassHeading_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="240dp" />
+        <EditText
+            android:id="@+id/emailEditTextSignUp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/guideline_passwordHeading_bottom"
+            app:layout_constraintBottom_toTopOf="@id/guideline_passwordField_bottom"
+            app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"
+            android:backgroundTint="#FF4B3A"
+            android:fontFamily="@font/poppins"
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@drawable/edittext_cursor_register"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/poppins"
-        android:text="Password"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/guideline_newPassHeading_botttom"
-        app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"
-        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline_newPassHeading_top"
-        android:textStyle="bold"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_newPassHeading_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="240dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_newPassHeading_botttom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="260dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/poppins"
+            android:text="Password"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline_newPassHeading_botttom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_textHeading_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_newPassHeading_top"
+            android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/passwordEditTextSignUp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_newPassHeading_botttom"
-        app:layout_constraintBottom_toTopOf="@id/guideline_newPassField_Bottom"
-        app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"
-        android:backgroundTint="#FF4B3A"
-        android:fontFamily="@font/poppins"
-        android:inputType="textPassword"
-        android:textCursorDrawable="@drawable/edittext_cursor_register"
-        android:textStyle="bold"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_newPassHeading_botttom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="260dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_newPassField_Bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="315dp" />
+        <EditText
+            android:id="@+id/passwordEditTextSignUp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/guideline_newPassHeading_botttom"
+            app:layout_constraintBottom_toTopOf="@id/guideline_newPassField_Bottom"
+            app:layout_constraintStart_toStartOf="@id/guideline_textHeading_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_textfield_end"
+            android:backgroundTint="#FF4B3A"
+            android:fontFamily="@font/poppins"
+            android:inputType="textPassword"
+            android:textCursorDrawable="@drawable/edittext_cursor_register"
+            android:textStyle="bold"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_signUpBtn_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="350dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_newPassField_Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="315dp" />
 
-    <View
-        android:id="@+id/register_signUp_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_signUpBtn_top"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_signUpBtn_bottom"
-        app:layout_constraintStart_toStartOf="@id/guideline_signUpBtn_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_signUpBtn_end"
-        android:background="@drawable/rounded_rectangle_orange"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_signUpBtn_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="350dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/register_signUp_view"
-        app:layout_constraintBottom_toBottomOf="@id/register_signUp_view"
-        app:layout_constraintStart_toStartOf="@id/register_signUp_view"
-        app:layout_constraintEnd_toEndOf="@id/register_signUp_view"
-        android:fontFamily="@font/poppins"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:text="Sign Up"
-        android:textSize="17sp"/>
+        <View
+            android:id="@+id/register_signUp_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/guideline_signUpBtn_top"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_signUpBtn_bottom"
+            app:layout_constraintStart_toStartOf="@id/guideline_signUpBtn_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_signUpBtn_end"
+            android:background="@drawable/rounded_rectangle_orange"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_signUpBtn_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="400dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/register_signUp_view"
+            app:layout_constraintBottom_toBottomOf="@id/register_signUp_view"
+            app:layout_constraintStart_toStartOf="@id/register_signUp_view"
+            app:layout_constraintEnd_toEndOf="@id/register_signUp_view"
+            android:fontFamily="@font/poppins"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="Sign Up"
+            android:textSize="17sp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_signUpBtn_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="100dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_signUpBtn_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="400dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_signUpBtn_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="100dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_signUpBtn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_signUpBtn_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="430dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

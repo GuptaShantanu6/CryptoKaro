@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cryptokaro.R
@@ -40,26 +41,26 @@ class HomeTab_for_tabForHomeActivity_Fragment : Fragment() {
 
         recyclerView!!.adapter = homeItemAdapter
 
-        val fdb = FirebaseDatabase.getInstance().reference.child("homeTabElements")
-        fdb.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                mHomeItem?.clear()
-                for (ss in snapshot.children) {
-                    val p =ss.getValue(HomeTabModelForHomeActivity::class.java)
-                    if (p != null) {
-                        mHomeItem?.add(p)
-                    }
-                }
-
-                homeItemAdapter?.notifyDataSetChanged()
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })
+//        val fdb = FirebaseDatabase.getInstance().reference.child("homeTabElements")
+//        fdb.addValueEventListener(object : ValueEventListener{
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                mHomeItem?.clear()
+//                for (ss in snapshot.children) {
+//                    val p =ss.getValue(HomeTabModelForHomeActivity::class.java)
+//                    if (p != null) {
+//                        mHomeItem?.add(p)
+//                    }
+//                }
+//
+//                homeItemAdapter?.notifyDataSetChanged()
+//
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                Toast.makeText(requireContext(), "Please restart the application", Toast.LENGTH_SHORT).show()
+//            }
+//
+//        })
 
         return view
 
