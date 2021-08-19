@@ -41,26 +41,26 @@ class HomeTab_for_tabForHomeActivity_Fragment : Fragment() {
 
         recyclerView!!.adapter = homeItemAdapter
 
-//        val fdb = FirebaseDatabase.getInstance().reference.child("homeTabElements")
-//        fdb.addValueEventListener(object : ValueEventListener{
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                mHomeItem?.clear()
-//                for (ss in snapshot.children) {
-//                    val p =ss.getValue(HomeTabModelForHomeActivity::class.java)
-//                    if (p != null) {
-//                        mHomeItem?.add(p)
-//                    }
-//                }
-//
-//                homeItemAdapter?.notifyDataSetChanged()
-//
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                Toast.makeText(requireContext(), "Please restart the application", Toast.LENGTH_SHORT).show()
-//            }
-//
-//        })
+        val fdb = FirebaseDatabase.getInstance().reference.child("homeTabElements")
+        fdb.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                mHomeItem?.clear()
+                for (ss in snapshot.children) {
+                    val p =ss.getValue(HomeTabModelForHomeActivity::class.java)
+                    if (p != null) {
+                        mHomeItem?.add(p)
+                    }
+                }
+
+                homeItemAdapter?.notifyDataSetChanged()
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), "Please restart the application", Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
         return view
 

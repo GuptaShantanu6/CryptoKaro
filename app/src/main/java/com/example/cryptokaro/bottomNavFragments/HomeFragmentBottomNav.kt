@@ -67,34 +67,34 @@ class HomeFragmentBottomNav : Fragment() {
         val UID = Firebase.auth.currentUser?.uid.toString()
         val userName : TextView = view.findViewById(R.id.userNameField)
 
-//        var getName : String = ""
-//        var finalName : String = ""
-//
-//        val fDb = FirebaseDatabase.getInstance().reference.child("Users")
-//        fDb.addValueEventListener(object : ValueEventListener{
-//            @SuppressLint("SetTextI18n")
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                userName.text = "Hey " + snapshot.child(UID).child("name").value.toString() + " \uD83D\uDE0A"
-////                getName = snapshot.child(UID).child("name").value.toString()
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                Toast.makeText(requireContext(), "PLease restart the application", Toast.LENGTH_SHORT).show()
-//            }
-//
-//        })
+        var getName : String = ""
+        var finalName : String = ""
 
-//        for (x in getName) {
-//            if (x != ' ') {
-//                finalName += x
-//            }
-//            else {
-//                break
-//            }
-//        }
+        val fDb = FirebaseDatabase.getInstance().reference.child("Users")
+        fDb.addValueEventListener(object : ValueEventListener{
+            @SuppressLint("SetTextI18n")
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userName.text = "Hey " + snapshot.child(UID).child("name").value.toString() + " \uD83D\uDE0A"
+//                getName = snapshot.child(UID).child("name").value.toString()
+            }
 
-//        userName.text = finalName + "\uD83D\uDE0A"
-//        userName.text = getName.toString()
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), "PLease restart the application", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        for (x in getName) {
+            if (x != ' ') {
+                finalName += x
+            }
+            else {
+                break
+            }
+        }
+
+        userName.text = finalName + "\uD83D\uDE0A"
+        userName.text = getName.toString()
 
 
         return view
